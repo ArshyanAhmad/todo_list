@@ -69,13 +69,45 @@ body{
     }
 }
 
-.input-container{
+#todo-list, .input-container{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     width: 100%;
 }
+
+#todo-list{
+    flex-direction: column;
+    gap: 30px;
+}
+
+#todo-list li{
+    background-color: aqua;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+#todo-list .btn{
+    background-color: red; 
+    border: 1px solid red;
+}
+
+#todo-list .btn:hover{
+    background-color: rgb(237, 28, 28);
+    border-color: rgb(237, 28, 28);
+    cursor: pointer;
+}
+
 
 .input-container input{
     max-width: inherit;
@@ -95,18 +127,19 @@ body{
     border-color: blue;
 }
 
-.input-container button{
+.btn{
     padding: 12px 20px;
     font-size: 15px;
     color: white;
     outline: none;
-    border: 1px solid green;
+    border: 1px solid blue;
     border-radius: 23px;
     background-color: blue;
     transition: all .2s ease;
 }
 
-.input-container button:hover{
+.input-container .btn:hover{
     cursor: pointer;
     background-color: rgb(31, 31, 229);
+    border-color: rgb(31, 31, 229);
 }

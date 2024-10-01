@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         li.setAttribute('data-id', task.id)
         li.innerHTML =
             `<span> ${task.text} </span>
-            <button>delete</button> 
+            <button class="btn">delete</button> 
             `
-
+        li.querySelector("button").classList.add("btn")
         li.querySelector("button").addEventListener("click", (e) => {
             e.stopPropagation();
             // const allTasks = JSON.parse(localStorage.getItem("tasks"));
