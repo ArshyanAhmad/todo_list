@@ -80,6 +80,7 @@ body{
 #todo-list{
     flex-direction: column;
     gap: 30px;
+    position: relative;
 }
 
 #todo-list li{
@@ -96,7 +97,7 @@ body{
     justify-content: space-between;
     font-weight: 500;
 }
-
+ 
 #todo-list .btn{
     background-color: red; 
     border: 1px solid red;
@@ -115,7 +116,7 @@ body{
     padding: 1px 5px 0px 20px;
     border: 2px solid grey;
     border-radius: 30px;
-    height: 40px;
+    height: 45px;
     font-size: 16px;
     color: #555;
     outline: none;
@@ -123,9 +124,11 @@ body{
     transition: all .2s ease;
 }
 
-.input-container input:focus{
+.input-container input:focus,
+.input-container input:hover{
     border-color: blue;
 }
+
 
 .btn{
     padding: 12px 20px;
@@ -138,8 +141,8 @@ body{
     transition: all .2s ease;
 }
 
-.input-container .btn:hover{
+.btn:hover{
     cursor: pointer;
-    background-color: rgb(31, 31, 229);
-    border-color: rgb(31, 31, 229);
+    background-color: rgb(51, 51, 236);
+    border-color: rgb(51, 51, 236);
 }

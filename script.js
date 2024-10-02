@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (todoInput.value === '') return;
 
         const newTask = {
-            id: new Date(Date.now()),
+            id: Date.now(),
             text: todoInput.value,
             completed: false,
         }
@@ -23,29 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function displayTasks(task) {
-        console.log(task);
-        
+
         const li = document.createElement("li");
         li.setAttribute('data-id', task.id)
         li.innerHTML =
-            `<span> ${task.text} </span>
-            <button class="btn">delete</button> 
-            `
+        `<span> ${task.text} </span>
+        <button class="btn">delete</button> 
+        `
         li.querySelector("button").classList.add("btn")
+        
         li.querySelector("button").addEventListener("click", (e) => {
             e.stopPropagation();
-            // const allTasks = JSON.parse(localStorage.getItem("tasks"));
-            const deletedId = Number.parseInt(li.getAttribute('data-id'));
 
-            // allTasks.forEach(e => {
-
-            //     if(e.id == deletedId){
-            //         localStorage.removeItem(deletedId);
-            //     }
-
-            // });
-
-            Tasks = Tasks.filter(t => t.id !== deletedId);
+            Tasks = Tasks.filter(t => t.id !== task.id);
+            li.remove();
             saveTasks();
 
         })
@@ -55,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function saveTasks() {
         localStorage.setItem("tasks", JSON.stringify(Tasks));
-        console.log(Tasks);
     }
 
 })
